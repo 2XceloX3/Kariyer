@@ -1,0 +1,14 @@
+{
+  "name": "iesu-kariyer-platformu",
+  "version": "1.0.0",
+  "private": true,
+  "description": "İstanbul Esenyurt Üniversitesi Kariyer Merkezi dijital kariyer platformu",
+  "scripts": {
+    "start": "vite --host 0.0.0.0",
+    "dev": "vite --host 0.0.0.0",
+    "preview": "vite --host 0.0.0.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

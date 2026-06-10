@@ -1,0 +1,6 @@
+JSX syntax check return code: 0
+STDOUT:
+{"diagnostics":0,"first":[]}
+
+STDERR:
+
