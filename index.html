@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>İESU Kariyer Platformu</title>
+  <style>
+    :root{--bg:#f7fafc;--card:#ffffff;--text:#102033;--muted:#65758b;--brand:#0f766e;--brand2:#e11d48;--line:#dbe4ee;--soft:#ecfdf5}*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:linear-gradient(135deg,#f7fafc,#e8fff8);color:var(--text)}header{padding:26px 18px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.wrap{max-width:1180px;margin:auto}.top{display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;gap:12px;align-items:center}.logo{width:46px;height:46px;border-radius:16px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;color:white;font-weight:900}.brand h1{font-size:20px;margin:0}.brand p{margin:3px 0 0;color:var(--muted);font-size:13px}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav button,.primary{border:0;border-radius:14px;padding:11px 15px;background:#e8f3f1;color:#07534d;font-weight:700;cursor:pointer}.nav button.active,.primary{background:var(--brand);color:white}.hero{padding:38px 18px}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}.card{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 14px 40px rgba(15,118,110,.09)}h2{font-size:34px;margin:0 0 10px}h3{margin:0 0 14px}.muted{color:var(--muted);line-height:1.65}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}.stat{background:var(--soft);border-radius:18px;padding:16px}.stat b{font-size:24px;color:var(--brand)}main{padding:0 18px 40px}.panel{display:none}.panel.active{display:block}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.item{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px}.item h4{margin:0 0 8px}.tag{display:inline-block;border-radius:999px;background:#f1f5f9;padding:6px 10px;font-size:12px;color:#475569;margin:4px 4px 4px 0}label{display:block;font-weight:700;margin:12px 0 6px}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:14px;padding:12px;font:inherit;background:#fff}textarea{min-height:95px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.cv{white-space:pre-wrap;background:#0f172a;color:#e2e8f0;border-radius:18px;padding:18px;min-height:220px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.danger{background:#fff0f3;color:#a30f34}.ok{background:#ecfdf5;color:#067247}.notice{border-left:4px solid var(--brand);padding:12px 14px;background:#f0fdfa;border-radius:12px;margin:12px 0}footer{padding:28px 18px;color:var(--muted);text-align:center}@media(max-width:850px){.grid,.cards,.row,.stats{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}h2{font-size:27px}.nav button{flex:1}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap top">
+    <div class="brand"><div class="logo">İK</div><div><h1>İESU Kariyer Platformu</h1><p>Kariyer Geliştirme Merkezi dijital öğrenci, mezun ve firma alanı</p></div></div>
+    <nav class="nav" aria-label="Ana menü">
+      <button class="active" data-tab="home">Ana sayfa</button>
+      <button data-tab="student">Öğrenci</button>
+      <button data-tab="company">Firma</button>
+      <button data-tab="admin">Yönetim</button>
+    </nav>
+  </div>
+</header>
+<section class="hero">
+  <div class="wrap grid">
+    <div class="card">
+      <h2>Kariyer süreçleri tek ekranda.</h2>
+      <p class="muted">Bu çalışan statik sürüm; öğrenci CV hazırlama, firma ilan önizleme, etkinlik duyuruları ve yönetici kontrol paneli için güvenli başlangıç sağlar. Canlı backend bağlandığında aynı arayüz Google Apps Script servislerine yönlendirilir.</p>
+      <div class="toolbar"><button class="primary" onclick="openTab('student')">CV Oluştur</button><button class="primary" onclick="openTab('company')">Firma Alanı</button></div>
+      <div class="stats"><div class="stat"><b>24</b><br>Kulüp</div><div class="stat"><b>16+</b><br>Ülke Katılımı</div><div class="stat"><b>3000</b><br>Aktif Hedef</div></div>
+    </div>
+    <div class="card">
+      <h3>Sistem Durumu</h3>
+      <div id="health"></div>
+      <div class="notice">Backend URL tanımlı değilse platform güvenli yerel modda çalışır. Veri tarayıcı içinde tutulur.</div>
+    </div>
+  </div>
+</section>
+<main class="wrap">
+  <section id="home" class="panel active">
+    <div class="cards">
+      <div class="item"><h4>Öğrenci Paneli</h4><p class="muted">CV, yetkinlik, ilgi alanı ve başvuru hazırlığı.</p><span class="tag">CV</span><span class="tag">Profil</span></div>
+      <div class="item"><h4>Firma Paneli</h4><p class="muted">İlan, staj, iş birliği ve marka görünürlüğü.</p><span class="tag">İlan</span><span class="tag">Staj</span></div>
+      <div class="item"><h4>Yönetim Paneli</h4><p class="muted">Tema, dışa aktarma, rapor ve güvenli kontrol alanı.</p><span class="tag">KVKK</span><span class="tag">Rapor</span></div>
+    </div>
+  </section>
+  <section id="student" class="panel">
+    <div class="grid">
+      <div class="card"><h3>CV Bilgileri</h3><div class="row"><div><label>Ad Soyad</label><input id="name" placeholder="Adınız Soyadınız"></div><div><label>Bölüm</label><input id="dept" placeholder="Bölümünüz"></div></div><label>Yetkinlikler</label><textarea id="skills" placeholder="Excel, iletişim, takım çalışması..."></textarea><label>Kariyer hedefi</label><textarea id="goal" placeholder="Kısa hedefinizi yazın"></textarea><div class="toolbar"><button class="primary" onclick="makeCv()">CV Önizle</button><button class="primary" onclick="saveProfile()">Kaydet</button></div></div>
+      <div class="card"><h3>CV Önizleme</h3><div id="cv" class="cv">Bilgileri girip CV Önizle butonuna basın.</div></div>
+    </div>
+  </section>
+  <section id="company" class="panel">
+    <div class="cards" id="jobs"></div>
+  </section>
+  <section id="admin" class="panel">
+    <div class="card"><h3>Yönetim Kontrol Alanı</h3><p class="muted">Bu statik sürümde yönetim işlemleri demo modundadır. Canlı backend bağlandığında tema, dışa aktarma, Drive kayıt ve audit işlemleri buraya bağlanacaktır.</p><div class="toolbar"><button class="primary" onclick="exportData()">Yerel Veriyi Dışa Aktar</button><button class="primary danger" onclick="localStorage.clear();renderHealth();alert('Yerel demo verisi temizlendi')">Yerel Veriyi Temizle</button></div><pre id="adminOut" class="cv"></pre></div>
+  </section>
+</main>
+<footer>İstanbul Esenyurt Üniversitesi Kariyer Geliştirme Merkezi — Phase 2 çalışan arayüz</footer>
+<script>
+const jobs=[{t:'Staj Programı',c:'Kurumsal Firma',d:'Öğrenciler için yarı zamanlı staj ve mentorluk.'},{t:'Mezun İş İlanı',c:'Teknoloji Ekibi',d:'Yeni mezunlara uygun başlangıç pozisyonu.'},{t:'Kariyer Etkinliği',c:'Kariyer Merkezi',d:'CV ve mülakat hazırlığı atölyesi.'}];
+function openTab(id){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>openTab(b.dataset.tab)));
+function renderJobs(){document.getElementById('jobs').innerHTML=jobs.map(j=>`<div class="item"><h4>${j.t}</h4><p><b>${j.c}</b></p><p class="muted">${j.d}</p><span class="tag">Aktif</span></div>`).join('');}
+function makeCv(){const n=document.getElementById('name').value||'Ad Soyad';const d=document.getElementById('dept').value||'Bölüm';const s=document.getElementById('skills').value||'Yetkinlikler';const g=document.getElementById('goal').value||'Kariyer hedefi';document.getElementById('cv').textContent=`${n}\n${d}\n\nYetkinlikler:\n${s}\n\nKariyer Hedefi:\n${g}`;}
+function saveProfile(){const data={name:name.value,dept:dept.value,skills:skills.value,goal:goal.value,at:new Date().toISOString()};localStorage.setItem('iesu_demo_profile',JSON.stringify(data));renderHealth();alert('Profil yerel demo modunda kaydedildi');}
+function exportData(){const data={profile:JSON.parse(localStorage.getItem('iesu_demo_profile')||'{}'),jobs,exportedAt:new Date().toISOString()};adminOut.textContent=JSON.stringify(data,null,2);}
+function renderHealth(){const has=!!localStorage.getItem('iesu_demo_profile');health.innerHTML=`<p class="ok tag">Arayüz aktif</p><p class="tag">Backend: yerel demo mod</p><p class="tag">Profil kaydı: ${has?'var':'yok'}</p>`;}
+renderJobs();renderHealth();
+</script>
+</body>
+</html>
