@@ -1,0 +1,19 @@
+name: Phase2 CI
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: ['main']
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/smoke/smoke.mjs
+      - run: node tests/smoke/security-check.mjs
+      - run: node tests/smoke/syntax-check.mjs
